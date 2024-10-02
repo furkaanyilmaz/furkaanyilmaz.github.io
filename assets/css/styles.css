@@ -251,8 +251,8 @@ body.dark-theme {
 }
 
 .nav__logo img {
-  margin-right: 20px; /* Resim ile metin arasında boşluk bırakır */
-  width: 40px; /* İsteğe bağlı olarak resim genişliğini belirleyin */
+  margin-right: 15px; /* Resim ile metin arasında boşluk bırakır */
+  width: 35px; /* İsteğe bağlı olarak resim genişliğini belirleyin */
   height: auto; /* Oranlarını koruyarak resmin yüksekliğini otomatik ayarlar */
   filter: invert(1); /* Renkleri tersine çevir a */
 }
