@@ -80,7 +80,40 @@ let swiperCertificate = new Swiper(".certificate__container", {
 
 
 
+/*=============== NOTIFICATION ===============*/
+// Creates a dynamic message box
+const showMessage = (message, type = 'info') => {
+  // First remove the old message if there is one
+  const existingMsg = document.getElementById('dynamic-message');
+  if (existingMsg) existingMsg.remove();
+
+  // Create new message box
+  const msg = document.createElement('div');
+  msg.id = 'dynamic-message';
+  msg.textContent = message;
+
+  // Color by style
+  if (type === 'success') msg.style.color = 'green';
+  else if (type === 'error') msg.style.color = 'red';
+  else msg.style.color = 'black';
+
+  msg.style.fontWeight = 'bold';
+  msg.style.marginTop = '10px';
+
+  // Add below the form
+  const form = document.getElementById('contact-form');
+  if (form) {
+    form.appendChild(msg);
+  }
+
+  // Remove after 2.5 seconds
+  setTimeout(() => {
+    msg.remove();
+  }, 2500);
+};
+
 /*=============== EMAIL JS ===============*/
+emailjs.init('O2yj27ynqtWKd2jsl');
 
 const contactForm = document.getElementById('contact-form'),
       contactName = document.getElementById('contact-name'),
@@ -102,25 +135,18 @@ const sendEmail = (e) =>{
 
   }else{
     // serviceID - templateID - #form - publicKey
-    emailjs.sendForm('service_f9v1oqo','template_mpk49wh','#contact-form','O2yj27ynqtWKd2jsl')
+    emailjs.sendForm('service_f9v1oqo','template_mpk49wh','#contact-form')
       .then(() =>{
-        // Show message and add color
-        contactMassage.classList.add('color-blue')
-        contactMassage.textContent = 'Message sent ✅'
+        showMessage('Message sent ✅', 'success');
 
-        // Remove message after five seconds
-        setTimeout(() =>{
-          contactMassage.textContent = ''
-        }, 5000)
-      }, (error) =>{
-        alert('OOPS! Something has failed...', error)
-      })
-    
-    // To clear the input field
-    contactName.value = ''
-    contactEmail.value = ''
-    contactOpinion.value = ''
-    
+        // Clear the input field);
+        contactName.value = ''
+        contactEmail.value = ''
+        contactOpinion.value = ''
+        }, (error) =>{
+        showMessage('OOPS! Something has failed ❌', 'error');
+        console.log('EmailJS FAILED...', error);
+      });
   }
 }
 

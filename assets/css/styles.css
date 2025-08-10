@@ -74,7 +74,7 @@ body {
   font-size: var(--normal-font-size);
   background-color: var(--body-color);
   color: var(--text-color);
-  transition: background .4s; /* for dark mode animation */
+  
 }
 
 h1, h2, h3 {
@@ -341,24 +341,24 @@ color: var(--title-color);
     text-align: center;
     font-size: var(--h1-font-size); /* --biggest-font-size*/ 
     letter-spacing: .3px;
-    margin-bottom: 3rem;
+    margin-bottom: 6rem;
 }
   
 .home__blob{
     position: relative;
-    width: 330px; /* 375 */
-    height: 440px; /* 500 */
+    width: 270px; /* 375 */
+    height: 270px; /* 500 */
     background-color: var(--body-color);
     border: 2px solid var(--text-color-light);
     justify-self: center;
     border-radius: 6.5rem;
     place-items: center;
-    transition: background .4s; /* for dark mode animation */
+    
 }
   
 .home__profile{
-    width: 315px; /* 330 -  345 - 375 */
-    height: 420px; /* 420 - 460 - 500 */
+    width: 250px; /* 330 -  345 - 375 */
+    height: 250px; /* 420 - 460 - 500 */
     background-color: var(--gradient-color);
     border-radius: 6.5rem;
     overflow: hidden;
@@ -409,7 +409,7 @@ color: var(--title-color);
 .home__social-link{
     font-size: 1.8rem;
     color: var(--text-color-light);
-    transition: color .3s;
+    
 }
   
 .home__social-link:hover{
@@ -419,6 +419,7 @@ color: var(--title-color);
 .home__info{
     display: grid;
     row-gap: 2rem;
+
 }
   
 .home__info-title{
@@ -436,7 +437,8 @@ color: var(--title-color);
 }
   
 .home__info-description{
-    padding-right: 4rem;
+    text-align: left; /* Yazıyı sola dayalı yap */
+    padding-right: 0; /* Sağ boşluğu kaldır */
 }
   
 .home__info-mail{
@@ -489,7 +491,7 @@ color: var(--title-color);
   border-radius: 3rem;
   place-items: center;
   margin-bottom: 1rem;
-  transition: background .4s; /* for dark mode animation */
+  
 }
 
 .skills__blob img{
@@ -886,7 +888,7 @@ color: var(--title-color);
   font-size: var(--smaller-font-size);
   font-weight: var(--font-medium);
   padding: .35rem;
-  transition: background .4s; /* for dark mode animation */
+  
 }
 
 .contact__form-area{
@@ -1171,7 +1173,7 @@ color: var(--title-color);
     top: 0;  /* 0 */
     bottom: initial;
     background-color: var(--body-color);
-    transition: .4s;
+    
   }
 
   .nav{
@@ -1192,7 +1194,7 @@ color: var(--title-color);
     width: initial;
     margin-left: auto;
     background-color: var(--body-color);
-    transition: background .4s;
+    
   }
   .nav__list{
     display: flex;
